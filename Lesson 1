@@ -1,0 +1,12 @@
+import cv2
+#To read an image
+img = cv2.imread('Tomatoes.png', cv2.IMREAD_COLOR)#to read image
+cv2.imshow('Tomatoes', img)#Showing the picture
+cv2.waitKey(0)
+cv2. destroyAllWindows()
+#----------------------------
+#Resizing an image
+resized = cv2.resize(img, (1000,900))
+cv2.imshow('Resized Image', resized)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
