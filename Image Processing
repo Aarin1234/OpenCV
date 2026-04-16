@@ -1,0 +1,29 @@
+import cv2
+
+img = cv2.imread('Pikachu.png', cv2.IMREAD_COLOR)
+cv2.imshow('Pikachu', img)
+cv2.waitKey(0)#To hold the window until user presses a key on a keyboard
+cv2.destroyAllWindows()
+
+#Read and display images in grey scale
+img = cv2.imread('Pikachu.png', 0)
+cv2.imshow('Pikachu in GreyScale', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#Print an in image in different color formats
+image = cv2.imread('Pikachu.png', 1) 
+B,G,R = cv2.split(image)
+
+cv2.imshow("original", image)
+cv2.waitKey(0)
+cv2.imshow('Blue Saturation Image', B)
+cv2.waitKey(0)
+
+cv2.imshow('Green Saturation Image', G)
+cv2.waitKey(0)
+
+
+cv2.imshow('Red Saturation Image', R)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
