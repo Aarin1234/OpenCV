@@ -1,0 +1,26 @@
+import cv2
+import numpy as np
+
+
+image1 = cv2.imread('Images\Cat.png')
+image2 = cv2.imread('Images\Cat2.jpg')
+
+cv2.imshow('Cat', image1)
+cv2.imshow('Cat2', image2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+#Adding the images
+#While adding two images, both should have the same size
+sum =cv2.add(image1,image2)
+cv2.imshow('Added Image',sum)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+
+#Blending the images with 0.5 and 0.4
+weightedSum = cv2.addWeighted(image1, 0.5, image2, 0.4,0)
+cv2.imshow('Weighted image', weightedSum)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
