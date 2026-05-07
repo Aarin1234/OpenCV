@@ -1,0 +1,40 @@
+import cv2
+
+image = cv2.imread('Images\Pikachu.png')
+
+#Drawing a line on an img
+start_point = (0,0)
+end_point = (400,400)
+color = (0,0,255)
+thickness = 9
+image = cv2.line(image, start_point, end_point, color, thickness)
+cv2.imshow('hi',image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#Drawing a rectangle on a image
+image = cv2.imread('Images\Pikachu.png')
+start_point = (5,5)
+end_point = (200,100)
+
+
+color = (0,0,255)
+thickness = 9
+image = cv2.rectangle(image, start_point, end_point, color, thickness)
+
+cv2.imshow('image with a rectangle', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+#Filling the rectangle with color
+start_point = (5,5)
+end_point = (200,100)
+
+
+color = (0,0,255)
+thickness = -1
+image = cv2.rectangle(image, start_point, end_point, color, thickness)
+
+cv2.imshow('image with a filled rectangle', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
