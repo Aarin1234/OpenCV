@@ -1,0 +1,37 @@
+import cv2
+import os
+
+from PIL import Image
+path = "images for collage"
+os.chdir(path)
+
+mean_height = 0
+mean_height = 0
+
+num_of_images = len(os.listdir('.'))#calculating the num of images
+
+for file in os.listdir('.'):
+    img = Image.open(os.path.join(path, file))
+    width, height = img.size
+    mean_height = mean_height + width
+    mean_width = mean_width + width
+
+
+#Averaging width and height
+mean_width = mean_width//num_of_images
+mean_height = mean_height//num_of_images
+
+print(mean_width)
+print(mean_height)
+
+#Resizing all images to the mean width and height
+for file in os.listdir('.'):
+    if file.endswith('.jpg') or file.endswith('.jpeg') or file.endswith('.png'):
+        img = Image.open(os.path.join(path, file))
+        width, height = img.size
+        print(width, height)
+        imgResized = img.resize((mean_width, mean_height), Image.LANCZOS)
+        imgResized.save(file,'JPEG', quality = 95)
+        print(img.filename.split('\\')[-1], 'is resized')
+
+#function to generate video
