@@ -16,7 +16,7 @@ while(raw_video.isOpened()):
     if not return_val:
         break
     count += 1
-    image = np.flip(img, axis = 1)
+    img = np.flip(img, axis = 1)
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
     #define red ranges in HSV
     lower_red1 = np.array([100,40,40])
@@ -37,8 +37,8 @@ while(raw_video.isOpened()):
     mask2 = cv2.bitwise_not(mask1)
     
     result1 = cv2.bitwise_and(background, background, mask = mask1)
-    result2 = cv2.bitwise_and(image, image, mask = mask2)
-    final_output = cv2.addWeighted(result1, result2, 1, 0)
+    result2 = cv2.bitwise_and(img, img, mask = mask2)
+    final_output = cv2.addWeighted(result1, 1, result2, 1, 0)
     cv2.imshow('Invisible Man', final_output)
     if cv2.waitKey(5)== ord('q'):
         break
