@@ -1,0 +1,47 @@
+class Fruit:
+    #properties/attributes
+    def __init__(self, color, taste, shape, preference):
+        self.color = color
+        self.taste = taste
+        self.shape = shape
+        self.preference = preference
+
+    #Function/method
+    #Getters = To get the value
+    def get_shape(self):
+        return self.shape
+
+    #Setter = To set/change the values
+    def set_shape(self, new_shape):
+        self.shape = new_shape
+
+
+    def increase_preference(self):
+        self.preference += 1
+
+
+    def show_fruit(self):
+        print(f"Hello I am a fruit with {self.color} color, a {self.shape} shape, and {self.taste} taste, {self.preference}")
+
+#Creating objects
+strawberry = Fruit('red', 'delicious', 'oval', 1)
+apple = Fruit('bright red', 'sweet & sour', 'heart', 1)
+
+
+#Calling functions
+print('\n')
+strawberry.show_fruit()
+apple.show_fruit()
+
+
+#Changing the shape of the apple
+apple.set_shape('round')
+apple.show_fruit()
+
+
+#Increasing the preference of the apple
+apple.increase_preference()
+apple.show_fruit()
+
+#Only getting the taste and shape of the strawberry
+print(f'Shape of a strawberry = {strawberry.shape}')
